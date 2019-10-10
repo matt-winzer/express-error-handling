@@ -24,7 +24,7 @@ app.get('/error', async (req, res, next) => {
 
 app.post('/post', (req, res, next) => {
   const body = req.body
-  res.json({ body })
+  res.json({ msg: 'response sent', body })
 })
 
 app.use(notFound)
