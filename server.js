@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
 
-// app.use(express.json())
+app.use(express.json())
 
 app.get('/error', async (req, res, next) => {
   const promise = new Promise((resolve, reject)=> {
@@ -20,6 +20,11 @@ app.get('/error', async (req, res, next) => {
     next(error)
   }
   
+})
+
+app.post('/post', (req, res, next) => {
+  const body = req.body
+  res.json({ body })
 })
 
 app.use(notFound)
