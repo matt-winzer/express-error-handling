@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
 
+// don't need bodyParser middleware any more
 app.use(express.json())
 
 app.get('/error', async (req, res, next) => {
